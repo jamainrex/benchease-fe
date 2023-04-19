@@ -1,14 +1,34 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <div class="container-fluid">
+    <div class="row flex-nowrap">
+      <SideBar />
+      <div class="col py-4">
+        <router-view />
+      </div>
+    </div>
+  </div>
 </template>
 
+<script lang="ts">
+import { defineComponent } from "vue";
+import SideBar from "@/components/SideBar.vue"; // @ is an alias to /src
+
+export default defineComponent({
+  name: "App",
+  components: {
+    SideBar,
+  },
+  props: {
+    msg: String,
+  },
+});
+</script>
+
 <style lang="scss">
+@import "@/assets/sass/main.scss";
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
