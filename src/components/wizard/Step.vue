@@ -17,7 +17,7 @@
       Next
     </button>
     <button type="submit" class="btn btn-primary" v-if="laststep">
-      Submit
+      Dashboard
     </button>
   </div>
 </template>
